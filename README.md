@@ -11,4 +11,13 @@ Clone the repository to your local machine using the following command:
 
 ```bash
 git clone git@github.com:Splix777/cub3d.git
-'''
+```
+## Running the Game
+After compilation, run the executable with the provided map file:
+```bash
+./cub3D maps/map.cub
+```
+## Controls
+- W/A/S/D: Move forward/left/backward/right
+- ←/→: Rotate the view left/right
+- ESC: Exit the game

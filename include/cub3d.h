@@ -22,8 +22,8 @@
 # define TRUE 1
 # define FALSE 0
 // Map
-# define SPEED 0.0125
-# define ROT_SPEED 0.0125
+# define SPEED 0.125
+# define ROT_SPEED 0.125
 // Error Messages
 # define USAGE "Usage: ./cub3d <map_of_your_choice.cub>\n"
 # define NOTCUB "Error: File is not a .cub file\n"

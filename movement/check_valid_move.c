@@ -32,6 +32,5 @@ int check_movement(t_game *game, double new_x, double new_y)
         game->player.pos_y = new_y;
         moved = 1;
     }
-    
     return moved;
 }

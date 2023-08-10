@@ -79,7 +79,6 @@ void init_player_pos(t_game *game)
     init_player_east_west(&game->player);     // Set direction vectors and camera plane for East/West
 }
 
-
 void    init_player(t_player *player)
 {
     player->dir = 0;

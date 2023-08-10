@@ -36,7 +36,6 @@ void	init_raycast(t_game *game, t_ray *ray, int x)
 	// Initialize map coordinates and delta distances for DDA algorithm
     // Initialize the starting map grid coordinates based on player's position
     ray->map_x = (int)game->player.pos_x;
-	ray->map_x = (int)game->player.pos_x;
 	ray->map_y = (int)game->player.pos_y;
 	// Calculate the delta distances for both horizontal and vertical steps
     // in the DDA algorithm. These are the distances between adjacent grid cells
@@ -270,8 +269,8 @@ void	update_texture_pixels(t_game *game, t_ray *ray, int x)
 		// Retrieve the pixel color from the texture using texture coordinates
 		color = game->textures[game->texture.index][game->texture.size * game->texture.y + game->texture.x];
 		// Apply shading effect for certain textures (NORTH and EAST)
-		if (game->texture.index == NORTH || game->texture.index == EAST)
-			color = (color >> 1) & 8355711;
+		if (game->texture.index == NORTH || game->texture.index == WEST)
+			color = (color >> 1) & 8355700;
 		// Store the pixel color in the texture_pixels array if it's not black
 		if (color > 0)
 			game->texture_pixels[y][x] = color;

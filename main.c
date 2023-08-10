@@ -55,6 +55,10 @@ int main(int argc, char **argv)
     init_player_pos(&game);
     init_mlx(&game);
     init_textures(&game);
+
+    print_final_map(&game);
+
+    
     render_frame(&game);
 	key_input(&game);
 	mlx_loop_hook(game.mlx, render, &game);
@@ -65,7 +69,6 @@ int main(int argc, char **argv)
     
     print_rgb(&game);
     print_map(&game);
-    print_final_map(&game);
     print_textures(&game);
     print_player(&game);
 

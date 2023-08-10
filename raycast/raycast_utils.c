@@ -150,10 +150,10 @@ void	perform_dda(t_game *game, t_ray *ray)
         }
 
 		// Check if the ray's coordinates are within a valid map range
-		if (ray->map_y < 0.1
-			|| ray->map_x < 0.1
-			|| ray->map_y > game->map.height - 0.9
-			|| ray->map_x > game->map.width - 0.9)
+		if (ray->map_y < 0.5
+			|| ray->map_x < 0.5
+			|| ray->map_y > game->map.height - 0.5
+			|| ray->map_x > game->map.width - 0.5)
 			break ; // Break the loop if the ray is out of map bounds
 		// Check if the grid cell contains a wall (block with value greater than '0')
 		else if (game->f_map[ray->map_y][ray->map_x] > '0')

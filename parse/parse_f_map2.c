@@ -68,14 +68,18 @@ int  check_player(t_game *game)
     return (TRUE);
 }
 
-int  check_player_position(t_game *game)
+int check_player_position(t_game *game)
 {
-    if (game->f_map[(int)game->player.pos_x][(int)game->player.pos_y + 1] == '\0'
-        || game->f_map[(int)game->player.pos_x][(int)game->player.pos_y + 1] == ' '
-        || game->f_map[(int)game->player.pos_x][(int)game->player.pos_y - 1] == ' ')
+    int row = (int)(game->player.pos_y);
+    int col = (int)(game->player.pos_x);
+
+    if (game->f_map[row][(col + 1)] == '\0'
+        || game->f_map[row][(col + 1)] == ' '
+        || (col > 0 && game->f_map[row][(col - 1)] == ' '))
         return (FALSE);
     return (TRUE);
 }
+
 
 int  check_empty_lines(t_game *game)
 {

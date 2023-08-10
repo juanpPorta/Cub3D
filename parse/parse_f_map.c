@@ -17,7 +17,7 @@ int validate_final_map(t_game *game)
         printf("CHECK MAP WALLS\n");
         return (FALSE);
     }
-    if (check_player(game) == FALSE || check_player_position(game) == FALSE)
+    if (check_player_position(game) == FALSE || check_player(game) == FALSE)
     {
         printf("CHECK PLAYER\n");
         return (FALSE);

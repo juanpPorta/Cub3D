@@ -54,9 +54,10 @@ int  check_player(t_game *game)
             if (ft_strchr("NSEW", game->f_map[i][j]))
             {
                 player_count++;
-                game->player.pos_x = (double)i + 0.5;
-                game->player.pos_y = (double)j + 0.5;
+                game->player.pos_x = (double)j + 0.5;
+                game->player.pos_y = (double)i + 0.5;
                 game->player.dir = game->f_map[i][j];
+                game->f_map[i][j] = '0';
             }
             j++;
         }

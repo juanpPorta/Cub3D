@@ -17,7 +17,7 @@ int	key_press_handler(int key, t_game *game)
 	if (key == XK_d)
 		game->player.move_x = 1;
 	if (key == XK_Shift_L)
-		game->player.speed = 0.5;
+		game->player.speed = 0.075;
 	return (0);
 }
 

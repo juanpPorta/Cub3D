@@ -22,8 +22,8 @@
 # define TRUE 1
 # define FALSE 0
 // Map
-# define SPEED 0.125
-# define ROT_SPEED 0.125
+# define SPEED 0.025
+# define ROT_SPEED 0.07
 // Error Messages
 # define USAGE "Usage: ./cub3d <map_of_your_choice.cub>\n"
 # define NOTCUB "Error: File is not a .cub file\n"
@@ -124,7 +124,7 @@ typedef struct s_player
 	int move_x;           // Player's movement along the X-axis
 	int move_y;           // Player's movement along the Y-axis
 	int rotate;           // Player's rotation direction (positive or negative)
-	double	speed;            // Player's movement speed
+	double	speed;		  // Player's movement speed
 } t_player;
 
 typedef struct s_img

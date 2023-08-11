@@ -5,6 +5,7 @@
         "libft.h": "c",
         "array": "c",
         "random": "c",
-        "ft_printf.h": "c"
+        "ft_printf.h": "c",
+        "keysym.h": "c"
     }
 }

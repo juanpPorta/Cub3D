@@ -92,4 +92,5 @@ void    init_player(t_player *player)
     player->move_x = 0;
     player->move_y = 0;
     player->rotate = 0;
+    player->speed = SPEED;
 }

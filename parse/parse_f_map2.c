@@ -75,10 +75,18 @@ int check_player_position(t_game *game)
 
     if (game->f_map[row][(col + 1)] == '\0'
         || game->f_map[row][(col + 1)] == ' '
-        || (col > 0 && game->f_map[row][(col - 1)] == ' '))
+        || (col > 0 && game->f_map[row][(col - 1)] == ' ')
+        || (row < (game->map.height - 1) && game->f_map[row + 1][col] == ' ')
+        || (row > 0 && game->f_map[row - 1][col] == ' '))
+    {
         return (FALSE);
+    }
+
     return (TRUE);
 }
+
+
+
 
 
 int  check_empty_lines(t_game *game)

@@ -1,5 +1,25 @@
 #include "./include/cub3d.h"
 
+static void print_colored_text(const char *text, const char *color_code) {
+    printf("%s%s%s", color_code, text, "\x1B[0m");
+}
+
+static void print_game_controls(void) {
+    printf("\x1B[1;34m");  // Set header color to bright blue
+    printf("Cub3d - Game Controls\n");
+    printf("\x1B[0m");     // Reset color to default
+
+    printf("Game Controls:\n");
+    print_colored_text("WASD", "\x1B[1;32m");  // Set color to bright green
+    printf(" - Move\n");
+    print_colored_text("Left/Right Arrows", "\x1B[1;32m");
+    printf(" - Rotate\n");
+    print_colored_text("Shift", "\x1B[1;32m");
+    printf(" - Sprint\n");
+    print_colored_text("ESC", "\x1B[1;31m");  // Set color to bright red
+    printf(" - Exit\n");
+}
+
 /*In summary, the parse_args function is responsible for reading and validating
 information from command-line arguments and the configuration file.
 It loads information from the specified configuration file using load_info.
@@ -55,8 +75,7 @@ int main(int argc, char **argv)
     init_player_pos(&game);
     init_mlx(&game);
     init_textures(&game);
-
-    print_final_map(&game);
+    print_game_controls();
 
     
     render_frame(&game);
@@ -64,15 +83,6 @@ int main(int argc, char **argv)
 	mlx_loop_hook(game.mlx, render, &game);
 	mlx_loop(game.mlx);
 
-
-
-    
-    print_rgb(&game);
-    print_map(&game);
-    print_textures(&game);
-    print_player(&game);
-
-	
     free_exit(&game, 0);
 }
 

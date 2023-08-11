@@ -124,6 +124,7 @@ typedef struct s_player
 	int move_x;           // Player's movement along the X-axis
 	int move_y;           // Player's movement along the Y-axis
 	int rotate;           // Player's rotation direction (positive or negative)
+	double	speed;            // Player's movement speed
 } t_player;
 
 typedef struct s_img

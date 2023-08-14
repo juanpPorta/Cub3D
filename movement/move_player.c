@@ -40,20 +40,20 @@ static int	strafe_right(t_game *game)
 	return (check_movement(game, new_x, new_y));
 }
 
-int	move_player(t_game *game)
+int move_player(t_game *game)
 {
-	int	moved;
+    int moved;
 
-	moved = 0;
-	if (game->player.move_y == 1)
-		moved += move_forward(game);
-	if (game->player.move_y == -1)
-		moved += move_backward(game);
-	if (game->player.move_x == -1)
-		moved += strafe_left(game);
-	if (game->player.move_x == 1)
-		moved += strafe_right(game);
-	if (game->player.rotate != 0)
-		moved += rotate_player(game, game->player.rotate);
-	return (moved);
+    moved = 0;
+    if (game->player.move_y == 1)
+        moved += move_forward(game);
+    if (game->player.move_y == -1)
+        moved += move_backward(game);
+    if (game->player.move_x == -1)
+        moved += strafe_left(game);
+    if (game->player.move_x == 1)
+        moved += strafe_right(game);
+    if (game->player.rotate != 0)
+        moved += rotate_player(game, game->player.rotate);
+    return (moved);
 }

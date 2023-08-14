@@ -24,6 +24,7 @@
 // Map
 # define SPEED 0.025
 # define ROT_SPEED 0.07
+# define GRAVITY 0.0005
 // Error Messages
 # define USAGE "Usage: ./cub3d <map_of_your_choice.cub>\n"
 # define NOTCUB "Error: File is not a .cub file\n"
@@ -120,11 +121,17 @@ typedef struct s_player
 	double dir_y;         // Player's direction vector along the Y-axis
 	double plane_x;       // Player's camera plane vector along the X-axis
 	double plane_y;       // Player's camera plane vector along the Y-axis
+	double	speed;		  // Player's movement speed
 	int has_moved;        // Flag indicating if the player has moved
 	int move_x;           // Player's movement along the X-axis
 	int move_y;           // Player's movement along the Y-axis
 	int rotate;           // Player's rotation direction (positive or negative)
-	double	speed;		  // Player's movement speed
+
+    int is_jumping;       // Flag indicating if the player is currently jumping
+    double jump_height;   // Maximum height the player can jump
+    double jump_speed;    // Speed at which the player jumps
+    double jump_velocity; // Current vertical velocity for the jump
+    double jump_time;     // Time since the jump started
 } t_player;
 
 typedef struct s_img

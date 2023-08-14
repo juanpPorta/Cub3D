@@ -93,4 +93,9 @@ void    init_player(t_player *player)
     player->move_y = 0;
     player->rotate = 0;
     player->speed = SPEED;
+    player->is_jumping = FALSE;
+    player->jump_height = 1.0;
+    player->jump_speed = 0.2;
+    player->jump_velocity = 0.0;
+    player->jump_time = 0.0;
 }

@@ -84,7 +84,6 @@ fclean: clean
 	@$(RM) $(NAME)
 	@make -C $(LIBFT_DIR) fclean
 	@make -C $(PRINTF_DIR) fclean
-	@make -C $(MLX_DIR) fclean
 	@echo "$(RED)$(CHECKMARK) $(NAME) removed.$(RESET)"
 
 re: fclean all

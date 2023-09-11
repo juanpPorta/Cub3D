@@ -43,7 +43,7 @@ int check_validate_textures(t_game *game)
     int     i;
 
     i = 0;
-    while (game->map.map[i] && i < 4)
+    while (game->map.map[i])
     {
         if (!ft_strncmp(game->map.map[i], "NO", 2))
             game->texture.north = get_text(game->map.map[i]);

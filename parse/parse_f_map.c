@@ -25,12 +25,36 @@ int validate_final_map(t_game *game)
     return (TRUE);
 }
 
+static void find_finalmap_dimensions(t_game *game)
+{
+    int i;
+
+    i = 0;
+    while (game->map.map[i])
+    {
+
+        if (game->map.map[i][0] == '\0' || ft_isalpha(game->map.map[i][0]))
+            i++;
+        else if (game->map.map[i][0] == '1' || game->map.map[i][0] == ' ')
+        {
+            game->map.height++;
+            i++;
+        }
+        else
+            i++;
+
+    }
+}
+
 int check_validate_map(t_game *game)
 {
     int i;
     int j;
 
-    game->map.height = game->map.line_count - 8;
+    find_finalmap_dimensions(game);
+    printf("MAP HEIGHT 1: %d\n", game->map.height);
+    // game->map.height = game->map.line_count - 8;
+    printf("MAP HEIGHT 2: %d\n", game->map.height);
     if (game->map.height < 3)
         return (err_msg(MAPTOOSMALL, 0));
     game->f_map = ft_calloc(game->map.height + 1, sizeof(char *));

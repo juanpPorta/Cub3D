@@ -19,7 +19,6 @@ static void print_game_controls(void) {
     print_colored_text("ESC", "\x1B[1;31m");  // Set color to bright red
     printf(" - Exit\n");
 }
-
 /*In summary, the parse_args function is responsible for reading and validating
 information from command-line arguments and the configuration file.
 It loads information from the specified configuration file using load_info.
